@@ -1,0 +1,583 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Mooli&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 2rem;
+
+  /*========== Colors ==========*/
+  --body-color: #23272a;
+  --black-color: #000000;
+  --black-grey-color: #181818;
+  --black-color-light: #5f5f5fb2;
+  --white-color: #ffffff;
+  --white-color-light: #ffffffb2;
+  --title-color: #1751AE;
+  --text-color: #8a8a8aa9;
+  --white-text-color: #fff;
+  --black-text-color: #000;
+
+  --black-main-color: #00001a; /*#0a0808*/
+  --main-color: #21213b;
+  --sub-color: #1a1a33;
+  --extra-color: #13142a;
+  --sub-extra-color: #0c0c22;
+  --cursor-hover-color: #6c6889;
+  --button-background: #32314e;
+
+  --info-border-color: #4795a3;
+  --info-background: #26555ea2;
+
+  /*========== Font and typography ==========*/
+
+  --body-font: "Poppins", sans-serif;
+  --second-font: "Rubik", sans-serif;
+  --third-font: "Work Sans", sans-serif;
+  --biggest-font-size: 2.5rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --padding-left: 8rem;
+
+  /*========== Font weight ==========*/
+  --font-super-thin: 100;
+  --font-thin: 200;
+  --font-semi-thin: 300;
+  --font-regular: 400;
+  --font-semi-regular: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+  --font-black-bold: 800;
+  --font-super-bold: 900;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-1k: 1000;
+
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+    transition: all 0.3s;
+  }
+  
+  html {
+  scroll-behavior: smooth;
+  }
+  
+  body {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+  background-color: var(--main-color);
+  color: var(--text-color);
+  text-align: center;
+  }
+  
+  ul {
+  list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  span
+  {
+    color: var(--span-color);
+    font-weight: var(--font-bold);
+  }
+
+  ::-webkit-scrollbar
+  {
+    width: 0.5vw;
+  }
+
+  ::-webkit-scrollbar-track
+  {
+    background: var(--extra-color);
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+    background: var(--cursor-hover-color);
+    border-radius: 0.4vw;
+  }
+
+  ::-webkit-scrollbar-thumb:hover
+  {
+    background: var(--button-background);
+  }
+  
+  /*=============== NAV ===============*/
+  
+  .navbar__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 1.2rem;
+    background: var(--sub-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar__logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__image {
+    max-height: 35px;
+    margin-right: 10px;
+    border-radius: 50px;
+  }
+  
+  .navbar__logo {
+    color: var(--white-text-color);
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: var(--font-bold);
+    cursor: pointer;
+  }
+  
+  .navbar a {
+    color: var(--white-text-color);
+    font-weight: var(--font-semi-bold);
+    font-family: var(--body-font);
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: all 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: var(--cursor-hover-color);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
+
+  .navbar .nav__active
+  {
+    color: var(--cursor-hover-color);
+    font-weight: var(--font-bold);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+  }
+  
+  
+  /*=============== HOME ===============*/
+  
+  
+  .main__content {
+    background-color: var(--black-main-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 7.4rem;
+    margin-top: 4.8rem;
+  }
+  
+  .main__content-title {
+    color: var(--white-text-color);
+    font-family: var(--body-font);
+    font-size: 46px;
+    font-weight: var(--font-bold);
+    margin-bottom: 2px;
+  }
+  
+  .main__content-description {
+    color: var(--white-color-light);
+    font-size: 22px;
+    margin-bottom: 20px;
+    max-width: 35rem; /* Ajusta este valor según tus necesidades */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  /*=============== PAGE CONTENT ===============*/
+  
+  .page__content {
+    background-color: var(--main-color);
+    padding: 4rem 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+}
+
+.page__content .prototype__img {
+  margin-left: 32rem;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 3.5rem;
+}
+
+.page__content .steps__img {
+  margin-left: 10rem;
+  width: 600px;
+  height: 620px;
+  max-width: 700px;
+  margin-bottom: 3.5rem;
+  border-radius: 10px;
+}
+
+.step-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px; /* Ajusta el margen entre los pares de pasos según tus necesidades */
+}
+
+/* Estilo para los pasos individuales dentro del contenedor */
+.step {
+  width: 48%; /* Cada paso ocupará el 48% del contenedor */
+}
+
+.page__content-title {
+    color: var(--white-text-color);
+    font-size: 2.5rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--body-font);
+    font-weight: var(--font-bold);
+}
+
+.page__content-subtitle-prototype
+{
+  color: var(--white-text-color);
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  font-family: var(--body-font);
+  font-weight: var(--font-bold);
+}
+
+.page__content-subtitle
+{
+    color: var(--white-text-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    font-family: var(--body-font);
+    font-weight: var(--font-bold);
+}
+
+.page__content-description {
+    text-align: justify;
+    color: var(--white-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    max-width: 45rem; /*45rem | Ajusta este valor según tus necesidades */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page__content-description-prototype
+{
+  text-align: justify;
+  color: var(--white-text-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  padding-left: 10px;
+  max-width: 38rem; /*45rem | Ajusta este valor según tus necesidades */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page__content-subdesc
+{
+    padding-left: 20px;
+    text-align: justify;
+    color: var(--white-text-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+    max-width: 45rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page__content-description .page__content-span
+{
+    font-weight: var(--font-semi-bold);
+}
+
+.page__content .page__content-btn{
+    margin-bottom: 2rem;
+    background: var(--button-background);
+    font-size: 19px;
+    color: var(--white-text-color);
+    font-weight: var(--font-semi-bold);
+    cursor: pointer;
+    border: 3px solid;
+    border-color: transparent;
+    padding: 12px 230px;
+    border-radius: 6px;
+    text-decoration: none; /* Asegura que el enlace no tenga subrayado */
+    display: inline-block
+}
+
+.page__content .page__content-btn:hover {
+    background-color: var(--extra-color);
+    color: var(--white-text-color);
+    border: 3px solid;
+    border-color: var(--sub-extra-color);
+}
+
+.page__video {
+    width: 100%;
+}
+
+.faq-group {
+  margin-left: 23rem;
+  margin-top: 50px;
+  transition: all 0.3 ease;
+}
+
+.faq-question {
+  width: 30%;
+  background-color: var(--sub-color);
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq-question .questions__title {
+  margin: 0;
+  color: var(--white-text-color);
+  text-align: left;
+  padding-left: 15px;
+}
+
+.faq-answer {
+  display: none;
+  padding: 10px;
+  background-color: var(--black-main-color);
+  border-radius: 5px;
+}
+
+.faq-question .faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-question.active .faq-answer {
+  margin-top: 5px;
+  display: block;
+  max-height: 500px; /* Ajusta esta altura según tus necesidades */
+  transition: max-height 0.3s ease;
+}
+
+.faq-question.active .questions__icon {
+  transform: rotate(90deg);
+    transition: transform 0.3s ease;
+}
+
+/* Cambia el fondo al hacer hover para indicar que es interactivo */
+.faq-question:hover {
+  background-color: var(--cursor-hover-color);
+}
+
+
+.page-navigation {
+    display: flex;
+    justify-content: space-between; /* Centra los elementos horizontalmente */
+    align-items: center;
+    margin-left: 190px;
+    margin-top: 5rem;
+    width: 80%;
+    gap: 10px;
+}
+  
+  .navigation-button-left{
+    background: transparent;
+    border: 2px solid;
+    padding: 8px;
+    text-align: left;
+    text-decoration: none;
+    color: var(--white-text-color);
+    border-radius: 5px;
+    border-color: var(--black-main-color);
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  
+  .navigation-button-right {
+    background: transparent;
+    border: 2px solid;
+    padding: 8px;
+    text-align: right;
+    text-decoration: none;
+    color: var(--white-text-color);
+    border-radius: 5px;
+    border-color: var(--black-main-color);
+    width: 50%;
+    box-sizing: border-box;
+  }
+  
+  .navigation-button-left:hover,
+  .navigation-button-right:hover {
+    border-color: var(--cursor-hover-color);
+  }
+  
+  .button-content {
+    padding: 10px;
+  }
+  
+  .button-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .button-content p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: var(--font-bold);
+    color: var(--cursor-hover-color);
+  }
+
+  .note-header {
+    font-size: var(--note__title-font-size);
+    font-weight: var(--font-semi-regular);
+    margin-bottom: 5px;
+  }
+
+  .note-header i {
+    margin-right: 5px;
+  }
+
+  .note__info {
+    margin-left: 33rem;
+    text-align: left;
+    border-left: 3px solid var(--info-border-color);
+    background-color: var(--info-background);
+    color: var(--white-text-color);
+    border-radius: 5px; 
+    max-width: 51rem;
+    margin-top: 20px;
+    margin-bottom: 2rem;
+    padding: 15px;
+    user-select: none;
+  }
+
+  .note-info .note__content-span-bold
+{
+  font-size: 16px;
+  font-weight: var(--font-semi-bold);
+  color: var(--white-text-color);
+  font-family: var(--body-font);
+}
+
+.separator-line
+{
+    width: 60%;
+    margin: 10px 380px; /* Ajusta el margen según tus necesidades */
+    border: 1px solid var(--cursor-hover-color);
+    border-width: 2px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.separator-header-line
+{
+  width: 100%;
+  border-width: 2px;
+  border-radius: 10px;
+  border-color: var(--cursor-hover-color);
+}
+
+.separator-line-prototype
+{
+  width: 80%;
+  margin: 10px 190px; /* Ajusta el margen según tus necesidades */
+  border: 1px solid var(--cursor-hover-color);
+  border-width: 2px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+  
+.footer {
+    background: var(--extra-color);
+    color: var(--white-text-color);
+    padding: 1.5rem 0;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 2.9rem;
+  }
+  
+  .footer .footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15rem; /* Espacio entre las columnas */
+    padding: 35px 500px;
+  }
+  
+  .footer-row .footer-col h4 {
+    color: var(--white-text-color);
+    font-size: 1.1rem;
+    font-weight: var(--font-semi-bold);
+  }
+  
+  .footer-col .links {
+    margin-top: 20px;
+  }
+  
+  .footer-col .links li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  .footer-col .links li a {
+    text-decoration: none;
+    color: var(--white-text-color);
+  }
+  .footer-col .links li a:hover {
+    color: var(--discord-main-color);
+  }
+  
+  .footer-col .links li i
+  {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 14px;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+      border-radius: 0;
+    }
+    .footer .footer-row {
+      padding: 20px;
+      gap: 1rem;
+    }
+    .footer-col form {
+      display: block;
+    }
+    .footer-col form :where(input, button) {
+      width: 100%;
+    }
+    .footer-col form button {
+      margin: 10px 0 0 0;
+    }
+  }
